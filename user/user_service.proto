@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package user;
+
+option java_package = "com.nuclei.user.proto";
+option java_multiple_files = true;
+
+import "user/user_message.proto";
+
+service UserService {
+
+  rpc CreateUser(CreateUserRequest) returns (UserResponse);
+
+  rpc GetUser(GetUserRequest) returns (UserResponse);
+
+  rpc AuthenticateUser(AuthenticateUserRequest)
+      returns (AuthenticateUserResponse);
+}
