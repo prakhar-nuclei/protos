@@ -5,12 +5,22 @@ package product;
 option java_package = "com.nuclei.product.proto";
 option java_multiple_files = true;
 
+import "google/protobuf/empty.proto";
 import "product/product_message.proto";
 
 service ProductService {
 
   rpc GetProduct(GetProductRequest)
       returns (ProductResponse);
+
+  rpc CreateProduct(CreateProductRequest)
+      returns (ProductResponse);
+
+  rpc UpdateProduct(UpdateProductRequest)
+      returns (ProductResponse);
+
+  rpc DeleteProduct(DeleteProductRequest)
+      returns (google.protobuf.Empty);
 
   rpc UpdateStock(UpdateStockRequest)
       returns (ProductResponse);
