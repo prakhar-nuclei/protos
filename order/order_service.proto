@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package order;
+
+option java_package = "com.nuclei.order.proto";
+option java_multiple_files = true;
+
+import "order/order_message.proto";
+
+service OrderService {
+  rpc CreateOrder(CreateOrderRequest) returns (OrderResponse);
+  rpc GetOrder(GetOrderRequest) returns (OrderResponse);
+}
