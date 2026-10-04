@@ -24,4 +24,7 @@ service ProductService {
 
   rpc UpdateStock(UpdateStockRequest)
       returns (ProductResponse);
+
+  rpc CompensateStock(CompensateStockRequest)
+      returns (ProductResponse);
 }
