@@ -9,17 +9,23 @@ message GetProductRequest {
   int64 product_id = 1;
 }
 
+
 message UpdateStockRequest {
   int64 product_id = 1;
   int32 quantity = 2;
   string operation_id = 3;
+  StockOperationDirection direction = 4;
 }
+
+
 
 message CompensateStockRequest {
   int64 product_id = 1;
   int32 quantity = 2;
   string compensation_id = 3;
+  StockOperationDirection direction = 4;
 }
+
 
 message CreateProductRequest {
   string name = 1;
@@ -37,6 +43,14 @@ message UpdateProductRequest {
 message DeleteProductRequest {
   int64 product_id = 1;
 }
+
+
+enum StockOperationDirection {
+  STOCK_OPERATION_DIRECTION_UNSPECIFIED = 0;
+  INCREASE = 1;
+  DECREASE = 2;
+}
+
 
 message ProductResponse {
   int64 product_id = 1;
